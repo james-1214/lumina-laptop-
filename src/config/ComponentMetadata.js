@@ -1,0 +1,53 @@
+// Single source of truth for the story: copy, 3D parts, focus offsets, highlight targets and scroll windows.
+export const STORY_RANGE = [0.34, 0.82]
+export const OVERVIEW_RANGE = [0.82, 0.91]
+const ILLUSTRATIVE = ['Model', 'Illustrative generic model — final specifications to be announced']
+// parts: reveal/explode channel keys.  focus: extra offset (rest-world axes, model units) while active.  targets: object names for the outline.
+export const STORY = [
+  { id:'motherboard', zoom:1.35, title:'Motherboard', subtitle:'The central nervous system', parts:['board'], targets:['Motherboard'], focus:{ board:[0,0.4,2.6] }, yaw:0.1,
+    desc:'Every other component plugs into this single board. It carries power and data between the processor, memory, storage, ports and display.',
+    functions:['Routes power to each subsystem','Carries data between chips and connectors','Hosts the processor, memory and storage sockets'],
+    purpose:'Keep every part of the laptop talking to every other part.', specs:[['Model','Supplied board model, scaled to the chassis'], ILLUSTRATIVE] },
+  { id:'processor', zoom:2.6, title:'Processor', subtitle:'Where instructions become action', parts:['cpu'], targets:['Processor'], focus:{ cpu:[0,0.9,2.8] }, yaw:-0.25,
+    desc:'The processor executes the instructions of every app. It sits on the board under a metal heat spreader so heat can be pulled away quickly.',
+    functions:['Runs apps and the operating system','Coordinates the other chips','Hands heat to the cooling system'],
+    purpose:'General-purpose computing for everything you do.', specs:[ILLUSTRATIVE] },
+  { id:'graphics', zoom:2.6, title:'Graphics module', subtitle:'Pixels, painted in parallel', parts:['gpu'], targets:['Graphics_Module'], focus:{ gpu:[0,0.9,2.8] }, yaw:0.25,
+    desc:'A dedicated graphics package handles imagery, video and 3D. Its work is split into many small parallel tasks that run at the same time.',
+    functions:['Renders 3D scenes and interface effects','Decodes and encodes video','Drives the display'],
+    purpose:'Take visual workloads off the main processor.', specs:[ILLUSTRATIVE] },
+  { id:'cooling', zoom:1.7, title:'Cooling system', subtitle:'Silence is a thermal problem', parts:['fans','pipes'], targets:['Cooling_Fan_Left','Cooling_Fan_Right','Heat_Pipes'], focus:{ fans:[0,0.5,2.4], pipes:[0,0.5,2.4] }, yaw:-0.2,
+    desc:'Copper heat pipes carry heat away from the chips to two blower fans, which push it out of the chassis.',
+    functions:['Heat pipes move heat by phase change','Two fans exhaust warm air','Keeps chips from throttling'],
+    purpose:'Sustain performance without overheating.', specs:[['Layout','Two blower fans + copper heat pipes (illustrative)']] },
+  { id:'battery', zoom:1.3, title:'Battery', subtitle:'Power, spread flat', parts:['battery'], targets:['Battery_Pack'], focus:{ battery:[0,-0.6,2.8] }, yaw:0.3,
+    desc:'Several flat lithium-ion cells are laid side by side under the palm rest, using the chassis footprint instead of thickness.',
+    functions:['Stores energy for unplugged use','Cells are connected as one pack','Sits low to keep the weight balanced'],
+    purpose:'Let the laptop run away from a socket.', specs:[['Cells','4 cells shown (illustrative)'], ['Chemistry','Lithium-ion (typical)']] },
+  { id:'ram', zoom:2.1, title:'Memory', subtitle:'Short-term thinking space', parts:['ram'], targets:['RAM_Modules'], focus:{ ram:[0,0.9,2.8] }, yaw:-0.3,
+    desc:'Memory modules hold whatever the system is working on right now, so the processor never waits on slower storage.',
+    functions:['Holds open apps and working data','Far faster than storage','Modules can be paired'],
+    purpose:'Make multitasking feel instant.', specs:[ILLUSTRATIVE] },
+  { id:'ssd', zoom:2.2, title:'Solid-state storage', subtitle:'Long-term memory, no moving parts', parts:['ssd'], targets:['SSD_Module'], focus:{ ssd:[-0.5,0.9,2.8] }, yaw:0.2,
+    desc:'A slim M.2 stick holds the operating system and your files on flash chips, with a controller managing reads and writes.',
+    functions:['Stores system and files','Controller manages the flash chips','No spinning parts'],
+    purpose:'Fast, silent, shock-resistant storage.', specs:[['Form factor','M.2 2280'], ['Key','M (NVMe)']] },
+  { id:'speakers', zoom:1.8, title:'Speakers', subtitle:'Sound from a slim body', parts:['speakers'], targets:['Speaker_L','Speaker_R'], focus:{ speakers:[0.9,0.1,2.2] }, yaw:-0.15,
+    desc:'Two enclosed speakers sit at the left and right edges, using the chassis as part of their sound chamber.',
+    functions:['Left and right stereo drivers','Enclosures control resonance','Mounted away from the keyboard'],
+    purpose:'Give a thin laptop a wide stereo image.', specs:[ILLUSTRATIVE] },
+  { id:'display', zoom:1.0, title:'Display assembly', subtitle:'Layers of light', parts:['glass','panel','backlight','shell'], targets:['Display_Glass','LCD_Panel','Backlight_Layer','Display_Housing'], focus:{ glass:[0,0,0.9], panel:[0,0,0.3], backlight:[0,0,-0.3], shell:[0,0,-0.9] }, yaw:0.35,
+    desc:'The screen is a stack: protective glass and bezel in front, the LCD panel that forms the image, a backlight behind it, and the aluminium housing.',
+    functions:['Glass protects the panel','LCD panel forms the picture','Backlight provides the light'],
+    purpose:'Turn electronics into a clear image.', specs:[['Layers','Glass · LCD · Backlight · Housing']] },
+  { id:'keyboard', zoom:1.0, title:'Keyboard & trackpad', subtitle:'Where you touch the machine', parts:['keycaps','keys','kbframe'], targets:['Keycaps','Trackpad','Keyboard_Frame'], focus:{ keycaps:[0,0.9,0.4], keys:[0,0.5,0.4], kbframe:[0,0.3,0.4] }, yaw:-0.2,
+    desc:'Individual keycaps sit on a frame inside the palm-rest top case, with the trackpad set into the front edge.',
+    functions:['Individual keycaps register each press','The frame keeps keys aligned','Trackpad handles pointing and gestures'],
+    purpose:'Comfortable, accurate input.', specs:[['Keycaps','262 separate pieces in the supplied model']] },
+  { id:'hinges', zoom:1.8, title:'Hinges & ports', subtitle:'Where it opens and connects', parts:['hinge','ports'], targets:['Left_Hinge','Right_Hinge','USB_Port_Assembly','HDMI_Port_Assembly','Audio_Port_Assembly'], focus:{ hinge:[0.6,0.3,0.7], ports:[0.9,0,0.7] }, yaw:0.1,
+    desc:'Two hinges let the display open and hold any angle. Along the edges sit the USB, HDMI and audio connectors, each soldered to the board.',
+    functions:['Hinges hold the display at any angle','USB for accessories and charging','HDMI for displays, audio for headphones'],
+    purpose:'Open, hold and connect.', specs:[['Ports shown','USB · HDMI · Audio (illustrative)']] },
+].map((s, i) => ({ ...s, index:i, num:String(i+1).padStart(2,'0'), side: i % 2 === 0 ? 'l' : 'r' }))
+export const storyIndexAt = p => p < STORY_RANGE[0] || p >= STORY_RANGE[1] ? -1 : Math.min(STORY.length-1, Math.floor((p - STORY_RANGE[0]) / ((STORY_RANGE[1]-STORY_RANGE[0]) / STORY.length)))
+export const storyStart = i => STORY_RANGE[0] + (i + 0.02) * (STORY_RANGE[1]-STORY_RANGE[0]) / STORY.length

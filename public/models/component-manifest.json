@@ -1,0 +1,124 @@
+{
+  "asset_pack": "LUMINA laptop internal components - procedural starter pack",
+  "units": "same coordinate units as inspected mac_book_pro.glb; verify scale in Blender",
+  "source_model": "mac_book_pro.glb",
+  "source_model_bounds": {
+    "min": [
+      -3.454608,
+      -2.457866,
+      -0.106883
+    ],
+    "max": [
+      3.457139,
+      1.816715,
+      4.259662
+    ],
+    "extents": [
+      6.911747,
+      4.274581,
+      4.366545
+    ]
+  },
+  "notes": [
+    "Procedural generic laptop internals; visual starter geometry, not manufacturing-accurate CAD.",
+    "Positions are approximate and must be checked in Blender against the laptop base.",
+    "The source GLB has generic mesh names; inspect and map its meshes before final integration.",
+    "Display_Assembly is an illustrative placeholder; use only if the original display internals are missing.",
+    "For scroll animation, animate one persistent set of meshes from assembled positions using the offsets below."
+  ],
+  "explode_offsets_z": {
+    "Motherboard": 0.55,
+    "Processor": 1.0,
+    "Graphics_Module": 1.12,
+    "Battery_Pack": -0.65,
+    "Cooling_Fan_Left": 0.9,
+    "Cooling_Fan_Right": 0.9,
+    "Heat_Pipes": 1.35,
+    "RAM_Module": 0.78,
+    "SSD_Module": 0.88,
+    "Speakers": -0.42,
+    "Internal_Frame": -0.95,
+    "Display_Assembly": 1.55
+  },
+  "groups": {
+    "Motherboard": [
+      "Motherboard_PCB",
+      "Motherboard_Connector_Block",
+      "Motherboard_IO_Block",
+      "Motherboard_Circuit_Detail_1",
+      "Motherboard_Circuit_Detail_2"
+    ],
+    "Processor": [
+      "Processor_Substrate",
+      "Processor_Heatspreader",
+      "Processor_Core"
+    ],
+    "Graphics_Module": [
+      "Graphics_Substrate",
+      "Graphics_Heatspreader"
+    ],
+    "Battery_Pack": [
+      "Battery_Main_Case",
+      "Battery_Cell_Seam_1",
+      "Battery_Cell_Seam_2",
+      "Battery_Cell_Seam_3",
+      "Battery_Cell_Seam_4",
+      "Battery_Connector"
+    ],
+    "Cooling_Fan_Left": [
+      "Cooling_Fan_Left_Housing",
+      "Cooling_Fan_Left_Rotor_Hub",
+      "Cooling_Fan_Left_Blade_1",
+      "Cooling_Fan_Left_Blade_2",
+      "Cooling_Fan_Left_Blade_3",
+      "Cooling_Fan_Left_Blade_4",
+      "Cooling_Fan_Left_Blade_5",
+      "Cooling_Fan_Left_Blade_6"
+    ],
+    "Cooling_Fan_Right": [
+      "Cooling_Fan_Right_Housing",
+      "Cooling_Fan_Right_Rotor_Hub",
+      "Cooling_Fan_Right_Blade_1",
+      "Cooling_Fan_Right_Blade_2",
+      "Cooling_Fan_Right_Blade_3",
+      "Cooling_Fan_Right_Blade_4",
+      "Cooling_Fan_Right_Blade_5",
+      "Cooling_Fan_Right_Blade_6"
+    ],
+    "Heat_Pipes": [
+      "Heat_Pipe_Left",
+      "Heat_Pipe_Right"
+    ],
+    "RAM_Module": [
+      "RAM_PCB",
+      "RAM_Chip_1",
+      "RAM_Chip_2",
+      "RAM_Chip_3",
+      "RAM_Chip_4",
+      "RAM_Contacts"
+    ],
+    "SSD_Module": [
+      "SSD_PCB",
+      "SSD_Controller",
+      "SSD_Flash",
+      "SSD_Connector"
+    ],
+    "Speakers": [
+      "Speaker_Left_Housing",
+      "Speaker_Right_Housing",
+      "Speaker_Left_Driver_1",
+      "Speaker_Left_Driver_2",
+      "Speaker_Right_Driver_1",
+      "Speaker_Right_Driver_2"
+    ],
+    "Internal_Frame": [
+      "Internal_Frame_Plate",
+      "Internal_Frame_Rib_Left",
+      "Internal_Frame_Rib_Right"
+    ],
+    "Display_Assembly": [
+      "Display_Panel_Illustrative",
+      "Display_Backplate_Illustrative"
+    ]
+  }
+}

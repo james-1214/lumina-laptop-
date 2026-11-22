@@ -1,0 +1,8 @@
+:root{
+--bg:#E9EFF8;--bg2:#F4F6FC;--section:#DCE8F7;--card:#F7F9FD;--text:#24344F;--muted:#64748B;--blue:#718BCB;--cyan:#8DBED2;--violet:#A9A9DC;--border:#CFD9E8;
+--blue-deep:#5C76B8;--violet-deep:#8A86CC;--cyan-deep:#5FA3C0;
+--accent:linear-gradient(120deg,#718BCB,#A9A9DC,#8DBED2);
+--accent-text:linear-gradient(120deg,#5C76B8,#8A86CC,#5FA3C0);
+--hero:linear-gradient(135deg,#DCE8F7 0%,#E9EFF8 50%,#E4E4F5 100%);
+--glass:rgba(247,249,253,.66);--glass-line:rgba(207,217,232,.95);--shadow:0 18px 50px rgba(92,118,184,.16);
+--font:'Inter','Geist',system-ui,-apple-system,sans-serif}
